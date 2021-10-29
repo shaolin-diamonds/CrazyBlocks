@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingBlock : MonoBehaviour
+public class Score : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 3f;
     float startingYPosition;
 
+    // Start is called before the first frame update
     void Start()
     {
         startingYPosition = transform.position.y;
@@ -19,8 +20,6 @@ public class MovingBlock : MonoBehaviour
         if (transform.position.x <= -15)
         {
             transform.position += Vector3.right * 30f;
-            float newY = startingYPosition + UnityEngine.Random.Range(-1f, 1f);
-            transform.position = new Vector3(transform.position.x, newY, 0f);
         }
     }
 }
